@@ -8,7 +8,7 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', msg => {
+client.on('message', async msg => {
     let content = msg.content;
     if (content.slice(0,2) == './') {
         content = content.slice(2);
@@ -17,11 +17,14 @@ client.on('message', msg => {
         } else if(content == 'ping') {
             msg.reply("pong");
         } else if(content == 'list') {
-            const ctfEvents = getCTFTimeEvents();
-            console.log(ctfEvents);
-            msg.reply(ctfEvents);
+            let ctfTitles = "";
+            let ctfEvents = await getCTFTimeEvents();
+            ctfEvents.forEach(function(elem, idx){
+                ctfTitles = ctfTitles.concat("[",idx,"] ",elem.title, "\n");
+            });
+            msg.reply(ctfTitles);
         } else if(content == 'update') {
-
+            
         }
     }
 });
