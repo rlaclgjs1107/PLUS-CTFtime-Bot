@@ -51,6 +51,8 @@ client.on('message', async msg => {
                 if(err) console.log(err);
                 else msg.reply("List Updated Successfully!");
             })
+        } else if(content == 'cat flag') {
+            msg.reply("PLUS{D0_y0u_l0v3_c47?_1_l0v3_c47_-m^^m-}");
         }
     }
 });
