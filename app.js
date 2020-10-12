@@ -52,7 +52,7 @@ client.on('message', async msg => {
                 else msg.reply("List Updated Successfully!");
             })
         } else if(content == 'cat flag') {
-            msg.reply("PLUS{D0_y0u_l0v3_c47?_1_l0v3_c47_-m^^m-}");
+            msg.reply("PLUS{D0_y0u_l0v3_c47?_1_l0v3_c47_t000!\_:>}");
         }
     }
 });
